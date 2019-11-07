@@ -7,10 +7,8 @@ window = tk.Tk()
 class colorPicker:
     def __init__(self):
         self.canvas = tk.Canvas(width=211,height=211)
-        #self.canvas.pack(fill="none", expand=False, anchor="nw")
         
         self.button = tk.Button(width=3, height=1, relief="sunken", bg="white")
-        #self.button.pack( anchor="ne")
         
         self.drag_data = {"x": 0, "y": 0, "item": None}
         self.angle = 0
@@ -28,14 +26,12 @@ class colorPicker:
         
     
     def loadimg(self, imagename):
-        #global tkphoto
         path = "C:\\Users\\mathi\\Desktop\\CSGO_tkinter_GUI\\"
         photo = Image.open(path + imagename)
         self.tkphoto = ImageTk.PhotoImage(photo)
         self.canvas.create_image((0,0), image=self.tkphoto, anchor="nw")
     
     def loadcursor(self, imagename):
-        #global tkcursor
         path = "C:\\Users\\mathi\\Desktop\\CSGO_tkinter_GUI\\"
         cursorimg = Image.open(path + imagename)
         self.tkcursor = ImageTk.PhotoImage(cursorimg)
